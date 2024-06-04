@@ -1,18 +1,18 @@
-.card-menu .education {
+.card-menu .dom-card {
   --bg-color: #ffd861;
   --bg-color-light: #ffeeba;
   --text-color-hover: #4c5656;
   --box-shadow-color: rgba(255, 215, 97, 0.48);
 }
 
-.card-menu .credentialing {
+.card-menu .function-card {
   --bg-color: #b8f9d3;
   --bg-color-light: #e2fced;
   --text-color-hover: #4c5656;
   --box-shadow-color: rgba(184, 249, 211, 0.48);
 }
 
-.card-menu .wallet {
+.card-menu .array-card {
   --bg-color: #ceb2fc;
   --bg-color-light: #f0e7ff;
   --text-color-hover: #fff;
