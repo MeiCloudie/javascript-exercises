@@ -1,0 +1,47 @@
+/* reset css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* global css */
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1199px;
+  margin: 0 auto;
+}
+
+/* back to top */
+.backToTop {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 50px;
+  height: 50px;
+  background: #f55f8d;
+  border-radius: 8px;
+  line-height: 50px;
+  text-align: center;
+  display: block;
+  color: white;
+  transition: all 0.2s;
+  box-shadow: -4px 4px 24px -10px #f55f8d;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cd-top--is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top--fade-out {
+  opacity: 0.5;
+}
