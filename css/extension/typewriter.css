@@ -1,6 +1,6 @@
 .typewriter h1 {
   color: #fff;
-  font-family: 'Anonymous Pro', monospace;
+  font-family: "Anonymous Pro", monospace;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid #ec48bd; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -9,6 +9,20 @@
   animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
   font-size: 80px;
   margin-top: 80px;
+}
+
+@media screen and (max-width: 992px) {
+  .typewriter h1 {
+    font-size: 50px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .typewriter h1 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
 }
 
 /* The typing effect */
