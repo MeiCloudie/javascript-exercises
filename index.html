@@ -62,10 +62,14 @@
     <link rel="stylesheet" href="./css/common/global.css" />
     <link rel="stylesheet" href="./css/extension/icon-tooltip.css" />
     <link rel="stylesheet" href="./css/extension/typewriter.css" />
+    <link rel="stylesheet" href="./css/extension/card-menu.css" />
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+      <nav
+        class="navbar navbar-expand-lg bg-primary fixed-top"
+        data-bs-theme="dark"
+      >
         <div class="container">
           <a class="navbar-brand" href="/">
             <img
@@ -143,11 +147,57 @@
 
     <main class="container">
       <!-- Main Title -->
-      <div class="d-flex justify-content-center my-5">
+      <div class="main-title d-flex justify-content-center my-5">
         <div class="typewriter">
           <h1>Hello JavaScript</h1>
         </div>
       </div>
+
+      <!-- Card Menu -->
+      <div
+        class="card-menu section d-flex justify-content-around align-items-center flex-wrap"
+      >
+        <a href="/jsdom.html" class="card education">
+          <div class="overlay"></div>
+          <div class="circle">
+            <img
+              src="./img/javascript-dom.png"
+              alt="javascript-dom"
+              width="75%"
+              height="auto"
+            />
+          </div>
+          <p>BÀI TẬP DOM</p>
+        </a>
+
+        <a href="/jsfunction.html" class="card credentialing">
+          <div class="overlay"></div>
+          <div class="circle">
+            <img
+              src="./img/javascript-function.png"
+              alt="javascript-function"
+              width="90%"
+              height="auto"
+            />
+          </div>
+          <p>BÀI TẬP HÀM</p>
+        </a>
+
+        <a href="/jsarray.html" class="card wallet">
+          <div class="overlay"></div>
+          <div class="circle">
+            <img
+              src="./img/javascript-array.png"
+              alt="javascript-array"
+              width="180%"
+              height="auto"
+            />
+          </div>
+          <p>BÀI TẬP MẢNG</p>
+        </a>
+      </div>
+
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </main>
 
     <footer></footer>
