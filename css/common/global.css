@@ -50,12 +50,20 @@ a:hover {
   transition: all 0.2s;
   box-shadow: -4px 4px 24px -10px #f55f8d;
   visibility: hidden;
-  opacity: 0;
+  opacity: 0.5;
+}
+
+.backToTop:hover i {
+  color: white;
+}
+
+.backToTop:hover {
+  opacity: 1;
 }
 
 .cd-top--is-visible {
   visibility: visible;
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .cd-top--fade-out {
