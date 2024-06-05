@@ -597,7 +597,67 @@
               role="tabpanel"
               aria-labelledby="v-pills-bt5-tab"
             >
-              bt5
+              <!-- Đề Bài -->
+              <div class="card border-light mb-3" style="width: 100%">
+                <div class="card-header">📖 ĐỀ BÀI</div>
+                <div class="card-body">
+                  <h4 class="card-title">🔥 Tính Tổng 2 Ký Số</h4>
+                  <br />
+                  <p class="card-text">
+                    - Viết chương trình nhập vào 1 số có 2 chữ số (VD: 12, 44,
+                    83)
+                    <br />
+                    - Tính tổng 2 ký số của số vừa nhập.
+                    <br />
+                    <br />
+                    📌 Cách lấy số:
+                    <br />
+                    - Số hàng đơn vị: int soHangDonVi = so % 10.
+                    <br />
+                    - Số hàng chục: int soHangChuc = so / 10.
+                  </p>
+                </div>
+              </div>
+              <br />
+              <!-- Bài Làm -->
+              <div>
+                <h3 class="text-secondary">BÀI LÀM</h3>
+                <hr />
+                <div class="px-5">
+                  <h3 class="mt-4 mb-4 text-center">
+                    🧮 Chương Trình - Tính Tổng 2 Ký Số
+                  </h3>
+                  <form id="formTinhTongHaiKySo">
+                    <div class="mb-3">
+                      <label for="" class="form-label">Số Có 2 Chữ Số</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="soCoHaiChuSo"
+                        id="soCoHaiChuSo"
+                        aria-describedby="helpId"
+                        placeholder="Nhập số có hai chữ số"
+                        required
+                        maxlength="2"
+                      />
+                    </div>
+
+                    <button class="btn btn-primary my-3" type="submit">
+                      Tính Tổng 2 Ký Số
+                    </button>
+                  </form>
+
+                  <div
+                    id="ketQuaTong2KySo"
+                    class="alert alert-dismissible alert-secondary"
+                  >
+                    <h5 class="alert-heading">Kết Quả Tổng 2 Ký Số</h5>
+                    <p class="mb-0">
+                      Tổng: <span id="xuatTong2KySo">...</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -77,3 +77,29 @@ document.getElementById("formTinhDienTichChuVi").onsubmit = function (event) {
   var ketQua = `Diện Tích: ${dienTich} - Chu Vi: ${chuVi}`
   document.getElementById("xuatDienTichChuVi").innerText = ketQua
 }
+
+//BÀI TẬP 5
+document.getElementById("formTinhTongHaiKySo").onsubmit = function (event) {
+  // Ngăn chặn hành vi mặc định của form khi submit
+  event.preventDefault()
+
+  // Lấy giá trị từ input
+  var soCoHaiChuSo = parseInt(document.getElementById("soCoHaiChuSo").value)
+
+  // Kiểm tra nếu số không phải là số có 2 chữ số
+  if (soCoHaiChuSo < 10 || soCoHaiChuSo > 99) {
+    alert("Vui lòng nhập số có 2 chữ số")
+    return
+  }
+
+  // Lấy hàng đơn vị và hàng chục
+  var soHangDonVi = soCoHaiChuSo % 10
+  var soHangChuc = Math.floor(soCoHaiChuSo / 10)
+
+  // Tính tổng
+  var tong = soHangDonVi + soHangChuc
+
+  // Hiển thị kết quả
+  document.getElementById("xuatTong2KySo").innerText =
+    soHangChuc + " + " + soHangDonVi + " = " + tong
+}
