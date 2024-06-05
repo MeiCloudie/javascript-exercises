@@ -158,7 +158,9 @@
       <div class="subtitle text-center">
         <h5 class="animate__animated wow animate__fadeIn animate__delay-2s">
           Tham khảo nguồn mẫu
-          <a href="https://baitap-ui-js.vercel.app/" target="_blank">👉 Tại Đây 👈</a>
+          <a href="https://baitap-ui-js.vercel.app/" target="_blank"
+            >👉 Tại Đây 👈</a
+          >
         </h5>
       </div>
 
@@ -243,7 +245,72 @@
               role="tabpanel"
               aria-labelledby="v-pills-bt1-tab"
             >
-              bt1
+              <!-- Đề Bài -->
+              <div class="card border-light mb-3" style="width: 100%">
+                <div class="card-header">📖 ĐỀ BÀI</div>
+                <div class="card-body">
+                  <h4 class="card-title">🔥 Tính Tiền Lương Nhân Viên</h4>
+                  <br />
+                  <p class="card-text">
+                    - Viết chương trình tính tiền lương nhân viên.
+                    <br />
+                    - Cho người dùng nhập vào Lương 1 Ngày & Số Ngày Làm.
+                    <br />
+                    <br />
+                    📌 Công thức tính lương: Lương 1 Ngày * Số Ngày Làm.
+                  </p>
+                </div>
+              </div>
+              <br />
+              <!-- Bài Làm -->
+              <div>
+                <h3 class="text-secondary">BÀI LÀM</h3>
+                <hr />
+                <div class="px-5">
+                  <h3 class="mt-4 mb-4 text-center">
+                    💰 Chương Trình - Tính Tiền Lương Nhân Viên
+                  </h3>
+                  <form id="formTinhTienLuongNV">
+                    <div class="mb-3">
+                      <label for="" class="form-label">Lương 1 Ngày</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="luong1Ngay"
+                        id="luong1Ngay"
+                        aria-describedby="helpId"
+                        placeholder="Nhập lương 1 ngày"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label">Số Ngày Làm</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="soNgayLam"
+                        id="soNgayLam"
+                        aria-describedby="helpId"
+                        placeholder="Nhập số ngày làm"
+                      />
+                    </div>
+
+                    <button class="btn btn-primary my-3" type="submit">
+                      Tính Lương
+                    </button>
+                  </form>
+
+                  <div
+                    id="ketQuaTinhLuong"
+                    class="alert alert-dismissible alert-secondary"
+                  >
+                    <h5 class="alert-heading">Kết Quả Tính Lương</h5>
+                    <p class="mb-0">
+                      Thành tiền: <span id="xuatLuong">0.0 VND</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               class="tab-pane fade"
@@ -280,6 +347,8 @@
           </div>
         </div>
       </div>
+
+      <br /><br /><br /><br />
     </main>
 
     <!-- FOOTER -->
