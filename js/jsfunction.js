@@ -191,3 +191,63 @@ document.getElementById("formTinhTienThue").onsubmit = function (event) {
     }
   )} VND`
 }
+
+//BÀI TẬP 4
+function handleLoaiKhachHangChange() {
+  const selectLoaiKhachHang = document.getElementById("selectLoaiKhachHang")
+  const inputSoKetNoi = document.getElementById("soKetNoi")
+  const loaiKhachHang = selectLoaiKhachHang.value
+  if (loaiKhachHang === "Doanh Nghiệp") {
+    inputSoKetNoi.disabled = false
+  } else {
+    inputSoKetNoi.disabled = true
+    inputSoKetNoi.value = ""
+  }
+}
+
+function calculateCableBill(event) {
+  event.preventDefault()
+
+  const selectLoaiKhachHang = document.getElementById("selectLoaiKhachHang")
+  const loaiKhachHang = selectLoaiKhachHang.value
+  const maKhachHang = document.getElementById("maKhachHang").value
+  const soKenhCaoCap =
+    parseInt(document.getElementById("soKenhCaoCao").value) || 0
+  const soKetNoi = parseInt(document.getElementById("soKetNoi").value) || 0
+  const ketQuaTinhTienCap = document.getElementById("xuatTienCap")
+
+  let phiXuLyHoaDon = 0
+  let phiDichVuCoBan = 0
+  let phiThueKenhCaoCap = 0
+  let tongTien = 0
+
+  if (loaiKhachHang === "Nhà Dân") {
+    phiXuLyHoaDon = 4.5
+    phiDichVuCoBan = 20.5
+    phiThueKenhCaoCap = 7.5 * soKenhCaoCap
+  } else if (loaiKhachHang === "Doanh Nghiệp") {
+    phiXuLyHoaDon = 15
+    if (soKetNoi <= 10) {
+      phiDichVuCoBan = 75
+    } else {
+      phiDichVuCoBan = 75 + (soKetNoi - 10) * 5
+    }
+    phiThueKenhCaoCap = 50 * soKenhCaoCap
+  }
+
+  tongTien = phiXuLyHoaDon + phiDichVuCoBan + phiThueKenhCaoCap
+
+  ketQuaTinhTienCap.textContent = `Mã khách hàng ${loaiKhachHang}: ${maKhachHang} có tổng tiền cáp là $${tongTien.toFixed(
+    2
+  )}`
+}
+
+// Gọi hàm handleLoaiKhachHangChange khi loại khách hàng thay đổi
+document.getElementById("selectLoaiKhachHang").onchange =
+  handleLoaiKhachHangChange
+
+// Gọi hàm calculateCableBill khi form được submit
+document.getElementById("formTinhTienCap").onsubmit = calculateCableBill
+
+// Khởi tạo trạng thái ban đầu cho form
+handleLoaiKhachHangChange()

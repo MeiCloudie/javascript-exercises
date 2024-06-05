@@ -731,7 +731,141 @@
               id="v-pills-bt4"
               role="tabpanel"
               aria-labelledby="v-pills-bt4-tab"
-            ></div>
+            >
+              <!-- Đề Bài -->
+              <div class="card border-light mb-3" style="width: 100%">
+                <div class="card-header">📖 ĐỀ BÀI</div>
+                <div class="card-body">
+                  <h4 class="card-title">🔥 Tính Tiền Cáp</h4>
+                  <br />
+                  <p class="card-text">
+                    - Viết chương trình tính hoá đơn khách hàng cho một công ty
+                    cáp. Có 2 loại khách hàng: Nhà Dân và Doanh Nghiệp. Có 2 mức
+                    giá tính tiền cáp:
+                    <br />
+                    1. Nhà dân:
+                    <br />
+                    - Phí xử lý hoá đơn: 4.5$
+                    <br />
+                    - Phí dịch vụ cơ bản: 20.5$
+                    <br />
+                    - Thuê kênh cao cấp: 7.5$ / kênh
+                    <br />
+                    2. Doanh nghiệp:
+                    <br />
+                    - Phí xử lý hoá đơn: 15$
+                    <br />
+                    - Phí dịch vụ cơ bản: 75$ cho tổng 10 kết nối đầu, mỗi kết
+                    nối thêm 5$ / kết nối
+                    <br />
+                    - Thuê kênh cao cấp: 50$ / kênh
+                    <br />
+                    <br />
+                    📌 Yêu cầu:
+                    <br />
+                    - Chương trình cho phép nhập vào Mã khách hàng, loại khách
+                    hàng, số kết nối, số kênh cao cấp. Nếu chọn loại khách hàng
+                    là Doanh nghiệp ô nhập số kết nối sẽ hiện lên, nếu chọn loại
+                    khách hàng là nhà dân thì ô nhập kết nối sẽ ẩn đi hoặc
+                    disabled.
+                    <br />
+                  </p>
+                </div>
+              </div>
+              <br />
+              <!-- Bài Làm -->
+              <div>
+                <h3 class="text-secondary">BÀI LÀM</h3>
+                <hr />
+                <div class="px-5">
+                  <h3 class="mt-4 mb-4 text-center">
+                    ⚙️ Chương Trình - Tính Tiền Cáp
+                  </h3>
+                  <form id="formTinhTienCap">
+                    <div class="mb-3">
+                      <label for="selectLoaiKhachHang" class="form-label mt-4"
+                        >Loại Khách Hàng</label
+                      >
+                      <select class="form-select" id="selectLoaiKhachHang">
+                        <option>Nhà Dân</option>
+                        <option>Doanh Nghiệp</option>
+                      </select>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label">Mã Khách Hàng</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="maKhachHang"
+                        id="maKhachHang"
+                        aria-describedby="helpId"
+                        placeholder="Nhập mã khách hàng"
+                        required
+                        maxlength="20"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label">Số Kênh Cao Cấp</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="soKenhCaoCao"
+                        id="soKenhCaoCao"
+                        aria-describedby="helpId"
+                        placeholder="Nhập số kênh cao cấp"
+                        required
+                        maxlength="5"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label">Số Kết Nối</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="soKetNoi"
+                        id="soKetNoi"
+                        aria-describedby="helpId"
+                        placeholder="Nhập số kết nối"
+                        required
+                        maxlength="5"
+                      />
+                    </div>
+
+                    <button class="btn btn-primary my-3" type="submit">
+                      Tính Tiền Cáp
+                    </button>
+                  </form>
+
+                  <div
+                    id="ketQuaTinhTienCap"
+                    class="alert alert-dismissible alert-secondary"
+                  >
+                    <h5 class="alert-heading">Kết Quả Tính Tiền Cáp</h5>
+                    <p class="mb-0">
+                      <span id="xuatTienCap">...</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Code -->
+              <div class="my-5">
+                <h3 class="text-secondary">CODE</h3>
+                <hr />
+                <div class="card border-light mb-3">
+                  <div class="card-body">
+                    <div class="p-2">
+                      <img
+                        class="img-fluid"
+                        src="./img/code-function-bt4.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
