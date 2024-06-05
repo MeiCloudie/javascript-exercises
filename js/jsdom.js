@@ -37,3 +37,25 @@ document.getElementById("formTinhGiaTriTrungBinh").onsubmit = function (event) {
   // Hiển thị kết quả
   document.getElementById("xuatTrungBinh").innerText = giaTriTrungBinh
 }
+
+//BÀI TẬP 3
+document.getElementById("formQuyDoiTien").onsubmit = function (event) {
+  // Ngăn chặn hành vi mặc định của form khi submit
+  event.preventDefault()
+
+  // Lấy giá trị từ input
+  var tienUSD = parseFloat(document.getElementById("tienUSD").value)
+
+  // Giá quy đổi
+  var giaQuyDoi = 23500
+
+  // Tính toán số tiền quy đổi
+  var thanhTien = tienUSD * giaQuyDoi
+
+  // Hiển thị kết quả
+  document.getElementById("xuatQuyDoiTien").innerText =
+    thanhTien.toLocaleString("vi", {
+      currency: "VND",
+      //   style: "currency",
+    }) + " VND"
+}
