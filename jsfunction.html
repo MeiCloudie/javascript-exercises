@@ -153,17 +153,365 @@
           <h1>Function</h1>
         </div>
       </div>
-    </main>
 
-    <!-- Subtitle -->
-    <div class="subtitle text-center">
-      <h5 class="animate__animated wow animate__fadeIn animate__delay-2s">
-        Tham khảo nguồn mẫu
-        <a href="https://baitapham.vercel.app/" target="_blank"
-          >👉 Tại Đây 👈</a
-        >
-      </h5>
-    </div>
+      <!-- Subtitle -->
+      <div class="subtitle text-center">
+        <h5 class="animate__animated wow animate__fadeIn animate__delay-2s">
+          Tham khảo nguồn mẫu
+          <a href="https://baitapham.vercel.app/" target="_blank"
+            >👉 Tại Đây 👈</a
+          >
+        </h5>
+      </div>
+
+      <!-- Tab Exercises -->
+      <div class="tab-exercises section">
+        <div class="d-flex align-items-start bg-gradient rounded-3">
+          <div
+            class="nav flex-column nav-pills w-auto me-3 p-3"
+            id="v-pills-tab"
+            role="tablist"
+            aria-orientation="vertical"
+          >
+            <button
+              class="nav-link active"
+              id="v-pills-bt1-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-bt1"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-bt1"
+              aria-selected="true"
+            >
+              Bài Tập 1
+            </button>
+            <button
+              class="nav-link"
+              id="v-pills-bt2-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-bt2"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-bt2"
+              aria-selected="false"
+            >
+              Bài Tập 2
+            </button>
+            <button
+              class="nav-link"
+              id="v-pills-bt3-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-bt3"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-bt3"
+              aria-selected="false"
+            >
+              Bài Tập 3
+            </button>
+            <button
+              class="nav-link"
+              id="v-pills-bt4-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#v-pills-bt4"
+              type="button"
+              role="tab"
+              aria-controls="v-pills-bt4"
+              aria-selected="false"
+            >
+              Bài Tập 4
+            </button>
+          </div>
+          <div
+            class="tab-content p-3"
+            style="width: 88%"
+            id="v-pills-tabContent"
+          >
+            <div
+              class="tab-pane fade show active"
+              id="v-pills-bt1"
+              role="tabpanel"
+              aria-labelledby="v-pills-bt1-tab"
+            >
+              <!-- Đề Bài -->
+              <div class="card border-light mb-3" style="width: 100%">
+                <div class="card-header">📖 ĐỀ BÀI</div>
+                <div class="card-body">
+                  <h4 class="card-title">🔥 Quản Lý Tuyển Sinh</h4>
+                  <br />
+                  <p class="card-text">
+                    - Trong kỳ thi tuyển, một thí sinh sẽ trúng tuyển nếu có
+                    điểm tổng kế lớn hơn hoặc bằng điểm chuẩn và không có môn
+                    nào điểm 0.
+                    <br />
+                    - Điểm tổng kết là tổng điểm của 3 môn thi và điểm ưu tiên.
+                    <br />
+                    - Điểm ưu tiên bao gồm điểm ưu tiên theo khu vực và điểm ưu
+                    tiên theo đối tượng.
+                    <br />
+                    - Viết chương trình nhập: Điểm chuẩn của hội đồng, điểm 3
+                    môn thi của thí sinh, khu vực (nhập X nếu không thuộc khu
+                    vực ưu tiên) và đối tượng dự thi (nhập 0 nếu không thuộc đối
+                    tượng ưu tiên). Cho biết thí sinh đó đậu hay rớt và tổng số
+                    điểm đạt được.
+                    <br />
+                    <br />
+                    📌 Bảng điểm ưu tiên:
+                    <br />
+                    - Khu vực: A = 2, B = 1, C = 0.5.
+                    <br />
+                    - Đối tượng: ĐT1 = 2.5, ĐT2 = 1.5, ĐT3 = 1.
+                    <br />
+                    - Nếu không thuộc khu vực hoặc đối tượng trong danh sách thì
+                    điểm khu vực và điểm đối tượng sẽ là 0.
+                    <br />
+                    - Nếu có 1 trong 3 môn bị điểm 0 thì lặp tức cho rớt không
+                    cần kiểm tra tổng điểm có lớn hơn hoặc bằng điểm chuẩn hay
+                    không.
+                  </p>
+                </div>
+              </div>
+              <br />
+              <!-- Bài Làm -->
+              <div>
+                <h3 class="text-secondary">BÀI LÀM</h3>
+                <hr />
+                <div class="px-5">
+                  <h3 class="mt-4 mb-4 text-center">
+                    🏫 Chương Trình - Quản Lý Tuyển Sinh
+                  </h3>
+                  <form id="formQuanLyTuyenSinh">
+                    <div class="mb-3">
+                      <label for="" class="form-label">Điểm Chuẩn</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="diemChuan"
+                        id="diemChuan"
+                        aria-describedby="helpId"
+                        placeholder="Nhập điểm chuẩn"
+                        required
+                        maxlength="2"
+                      />
+                      <small id="helpId" class="form-text text-muted ms-2"
+                        >Điểm chuẩn của 3 môn thường tối đa 30đ.</small
+                      >
+                    </div>
+
+                    <div class="mb-3">
+                      <fieldset>
+                        <legend class="fs-6">Chọn Khu Vực</legend>
+                        <div class="form-check ms-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="khuVuc"
+                            id="khuVucKhong"
+                            value="X"
+                            checked
+                          />
+                          <label class="form-check-label" for="khuVucKhong">
+                            Không
+                          </label>
+                        </div>
+
+                        <div class="form-check ms-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="khuVuc"
+                            id="khuVucA"
+                            value="A"
+                          />
+                          <label class="form-check-label" for="khuVucA">
+                            Khu Vực A
+                          </label>
+                        </div>
+
+                        <div class="form-check ms-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="khuVuc"
+                            id="khuVucB"
+                            value="B"
+                          />
+                          <label class="form-check-label" for="khuVucB">
+                            Khu Vực B
+                          </label>
+                        </div>
+
+                        <div class="form-check ms-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="khuVuc"
+                            id="khuVucC"
+                            value="C"
+                          />
+                          <label class="form-check-label" for="khuVucC">
+                            Khu Vực C
+                          </label>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                    <div class="mb-3">
+                      <fieldset>
+                        <legend class="fs-6">Chọn Đối Tượng</legend>
+                        <div class="form-check ms-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="doiTuong"
+                            id="doiTuongKhong"
+                            value="0"
+                            checked
+                          />
+                          <label class="form-check-label" for="doiTuongKhong">
+                            Không
+                          </label>
+                        </div>
+
+                        <div class="form-check ms-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="doiTuong"
+                            id="doiTuong1"
+                            value="DT1"
+                          />
+                          <label class="form-check-label" for="doiTuong1">
+                            Đối Tượng 1
+                          </label>
+                        </div>
+
+                        <div class="form-check ms-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="doiTuong"
+                            id="doiTuong2"
+                            value="DT2"
+                          />
+                          <label class="form-check-label" for="doiTuong2">
+                            Đối Tượng 2
+                          </label>
+                        </div>
+
+                        <div class="form-check ms-4">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="doiTuong"
+                            id="doiTuong3"
+                            value="DT3"
+                          />
+                          <label class="form-check-label" for="doiTuong3">
+                            Đối Tượng 3
+                          </label>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label">Điểm Môn Thứ Nhất</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="diemMonThuNhat"
+                        id="diemMonThuNhat"
+                        aria-describedby="helpId"
+                        placeholder="Nhập điểm môn thứ nhất (tối đa 10đ)"
+                        required
+                        maxlength="2"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label">Điểm Môn Thứ Hai</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="diemMonThuHai"
+                        id="diemMonThuHai"
+                        aria-describedby="helpId"
+                        placeholder="Nhập điểm môn thứ hai (tối đa 10đ)"
+                        required
+                        maxlength="2"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label">Điểm Môn Thứ Ba</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="diemMonThuBa"
+                        id="diemMonThuBa"
+                        aria-describedby="helpId"
+                        placeholder="Nhập điểm môn thứ ba (tối đa 10đ)"
+                        required
+                        maxlength="2"
+                      />
+                    </div>
+
+                    <button class="btn btn-primary my-3" type="submit">
+                      Kết Quả
+                    </button>
+                  </form>
+
+                  <div
+                    id="ketQuaTuyenSinh"
+                    class="alert alert-dismissible alert-secondary"
+                  >
+                    <h5 class="alert-heading">Kết Quả Tuyển Sinh</h5>
+                    <p class="mb-0">
+                      <span id="xuatKetQuaTuyenSinh">...</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Code -->
+              <div class="my-5">
+                <h3 class="text-secondary">CODE</h3>
+                <hr />
+                <div class="card border-light mb-3">
+                  <div class="card-body">
+                    <div class="p-2">
+                      <img
+                        class="img-fluid"
+                        src="./img/code-function-bt1.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-bt2"
+              role="tabpanel"
+              aria-labelledby="v-pills-bt2-tab"
+            ></div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-bt3"
+              role="tabpanel"
+              aria-labelledby="v-pills-bt3-tab"
+            ></div>
+            <div
+              class="tab-pane fade"
+              id="v-pills-bt4"
+              role="tabpanel"
+              aria-labelledby="v-pills-bt4-tab"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <br /><br /><br /><br />
+    </main>
 
     <!-- FOOTER -->
     <footer class="bg-dark text-center text-lg-start fixed-bottom">
