@@ -153,15 +153,585 @@
           <h1>Array</h1>
         </div>
       </div>
-    </main>
 
-    <!-- Subtitle -->
-    <div class="subtitle text-center">
-      <h5 class="animate__animated wow animate__fadeIn animate__delay-2s">
-        Tham khảo nguồn mẫu
-        <a href="https://baitapmang.vercel.app/" target="_blank">👉 Tại Đây 👈</a>
-      </h5>
-    </div>
+      <!-- Subtitle -->
+      <div class="subtitle text-center">
+        <h5 class="animate__animated wow animate__fadeIn animate__delay-2s">
+          Tham khảo nguồn mẫu
+          <a href="https://baitapmang.vercel.app/" target="_blank"
+            >👉 Tại Đây 👈</a
+          >
+        </h5>
+      </div>
+
+      <!-- Phần Thực Hành -->
+      <div class="phan-thuc-hanh bg-gradient rounded-3 my-5 p-5 w-100">
+        <!-- Đề Bài -->
+        <div class="card border-light mb-3" style="width: 100%">
+          <div class="card-header">📖 ĐỀ BÀI</div>
+          <div class="card-body">
+            <h4 class="card-title">🔥 Thao Tác Với Mảng - Array</h4>
+            <br />
+            <p class="card-text">
+              - Cho người dùng nhập vào các số nguyên và lưu trữ trong mảng.
+              <br />
+              - Thiết kế layout cho người dùng chọn thực hiện các chức năng bên
+              dưới.
+              <br />
+              <br />
+              📌 Xử lý các chức năng:
+              <br />
+              1. Tổng các số dương trong mảng.
+              <br />
+              2. Đếm có bao nhiêu số dương trong mảng.
+              <br />
+              3. Tìm số nhỏ nhất trong mảng.
+              <br />
+              4. Tìm số dương nhỏ nhất trong mảng.
+              <br />
+              5. Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị
+              chẵn thì trả về -1.
+              <br />
+              6. Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí
+              muốn đổi chỗ giá trị).
+              <br />
+              7. Sắp xếp mảng theo thứ tự tăng dần.
+              <br />
+              8. Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số
+              nguyên tố thì trả về – 1.
+              <br />
+              9. Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số
+              nguyên?
+              <br />
+              10. So sánh số lượng số dương và số lượng số âm xem số nào nhiều
+              hơn.
+            </p>
+          </div>
+        </div>
+        <br />
+        <!-- Bài Làm -->
+        <div>
+          <h3 class="text-secondary">BÀI LÀM</h3>
+          <hr />
+          <div class="px-5">
+            <h3 class="mt-4 mb-4 text-center">
+              🕹️ Chương Trình - Thao Tác Với Mảng
+            </h3>
+            <form id="formNhapMang">
+              <div class="mb-3">
+                <label for="" class="form-label">Nhập Số Nguyên N</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="soNguyenN"
+                  id="soNguyenN"
+                  aria-describedby="helpId"
+                  placeholder="Nhập số nguyên"
+                  required
+                />
+              </div>
+
+              <button class="btn btn-primary my-3" type="submit">
+                Thêm Số Vào Mảng
+              </button>
+            </form>
+
+            <div
+              id="mangDuocLuuTru"
+              class="alert alert-dismissible alert-secondary"
+            >
+              <h5 class="alert-heading">Mảng Được Lưu Trữ</h5>
+              <p class="mb-0">
+                <!-- Các số phần tử trong mảng được ngăn cách bởi dấu phẩy -->
+                <span id="xuatMang">...</span>
+              </p>
+            </div>
+            <hr />
+            <!-- Menu Chức Năng -->
+            <h3 class="mt-4 mb-2">MENU CHỨC NĂNG</h3>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    1️⃣ Tổng các số dương trong mảng
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <button class="btn btn-primary my-3" id="btnTongSoDuong">
+                      Tính Tổng Số Dương
+                    </button>
+
+                    <div
+                      id="ketQuaTongSoDuong"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">Kết Quả Tổng Số Dương</h5>
+                      <p class="mb-0">
+                        Tổng Số Dương: <span id="xuatTongSoDuong">...</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    2️⃣ Đếm có bao nhiêu số dương trong mảng
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <button class="btn btn-primary my-3" id="btnDemSoDuong">
+                      Đếm Số Dương
+                    </button>
+
+                    <div
+                      id="ketQuaDemSoDuong"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">Kết Quả Đếm Số Dương</h5>
+                      <p class="mb-0">
+                        Đếm Số Dương: <span id="xuatDemSoDuong">...</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    3️⃣ Tìm số nhỏ nhất trong mảng
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <button class="btn btn-primary my-3" id="btnTimSoNhoNhat">
+                      Tìm Số Nhỏ Nhất
+                    </button>
+
+                    <div
+                      id="ketQuaTimSoNhoNhat"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">Kết Quả Tìm Số Nhỏ Nhất</h5>
+                      <p class="mb-0">
+                        Số Nhỏ Nhất: <span id="xuatTimSoNhoNhat">...</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    4️⃣ Tìm số dương nhỏ nhất trong mảng
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <button
+                      class="btn btn-primary my-3"
+                      id="btnTimSoDuongNhoNhat"
+                    >
+                      Tìm Số Dương Nhỏ Nhất
+                    </button>
+
+                    <div
+                      id="ketQuaTimSoDuongNhoNhat"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">
+                        Kết Quả Tìm Số Dương Nhỏ Nhất
+                      </h5>
+                      <p class="mb-0">
+                        Số Dương Nhỏ Nhất:
+                        <span id="xuatTimSoDuongNhoNhat">...</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    5️⃣ Tìm số chẵn cuối cùng trong mảng
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <button
+                      class="btn btn-primary my-3"
+                      id="btnTimSoChanCuoiCung"
+                    >
+                      Tìm Số Chẵn Cuối Cùng
+                    </button>
+
+                    <div
+                      id="ketQuaTimSoChanCuoiCung"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">
+                        Kết Quả Tìm Số Chẵn Cuối Cùng
+                      </h5>
+                      <p class="mb-0">
+                        Số Chẵn Cuối Cùng:
+                        <span id="xuatTimSoChanCuoiCung">...</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix"
+                    aria-expanded="false"
+                    aria-controls="collapseSix"
+                  >
+                    6️⃣ Đổi chỗ 2 giá trị trong mảng theo vị trí
+                  </button>
+                </h2>
+                <div
+                  id="collapseSix"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSix"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <form id="formDoiCho">
+                      <div class="mb-3">
+                        <label for="" class="form-label"
+                          >Nhập Số Vị Trí 1</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          name="soViTri1"
+                          id="soViTri1"
+                          aria-describedby="helpId"
+                          placeholder="Nhập số vị trí 1"
+                          required
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="" class="form-label"
+                          >Nhập Số Vị Trí 2</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          name="soViTri2"
+                          id="soViTri2"
+                          aria-describedby="helpId"
+                          placeholder="Nhập số vị trí 2"
+                          required
+                        />
+                      </div>
+
+                      <button class="btn btn-primary my-3" type="submit">
+                        Đổi Chỗ
+                      </button>
+                      <!-- Vị trí là index của phần tử trong mảng.
+                      Để gán giá trị vào 1 vị trí(index) trong mảng => array[index] = giá trị;
+                      Tạo 1 biến tạm, gán giá trị của phần tử ở vị trí 1 vào biến tạm
+                      Gán giá trị của phần tử ở vị trí 2 vào vị trí 1
+                      Gán giá trị biến tạm vào vị trí 2 -->
+                    </form>
+
+                    <div
+                      id="ketQuaMangDoiCho"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">
+                        Kết Quả Mảng Sau Khi Đổi Chỗ
+                      </h5>
+                      <p class="mb-0">
+                        Mảng Sau Khi Đổi Chỗ:
+                        <span id="xuatMangDoiCho">...</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSeven"
+                    aria-expanded="false"
+                    aria-controls="collapseSeven"
+                  >
+                    7️⃣ Sắp xếp mảng theo thứ tự tăng dần
+                  </button>
+                </h2>
+                <div
+                  id="collapseSeven"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSeven"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <button
+                      class="btn btn-primary my-3"
+                      id="btnSapXepMangTangDan"
+                    >
+                      Sắp Xếp Mảng Tăng Dần
+                    </button>
+
+                    <div
+                      id="ketQuaSapXepMangTangDan"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">
+                        Kết Quả Sắp Xếp Mảng Tăng Dần
+                      </h5>
+                      <p class="mb-0">
+                        Mảng Tăng Dần:
+                        <span id="xuatSapXepMangTangDan">...</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEight">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseEight"
+                    aria-expanded="false"
+                    aria-controls="collapseEight"
+                  >
+                    8️⃣ Tìm số nguyên tố đầu tiên trong mảng
+                  </button>
+                </h2>
+                <div
+                  id="collapseEight"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingEight"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <button
+                      class="btn btn-primary my-3"
+                      id="btnTimSoNguyenToDauTien"
+                    >
+                      Tìm Số Nguyên Tố Đầu Tiên
+                    </button>
+
+                    <div
+                      id="ketQuaTimSoNguyenToDauTien"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">
+                        Kết Quả Tìm Số Nguyên Tố Đầu Tiên
+                      </h5>
+                      <p class="mb-0">
+                        Số Nguyên Tố Đầu Tiên:
+                        <span id="xuatTimSoNguyenToDauTien">...</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingNine">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseNine"
+                    aria-expanded="false"
+                    aria-controls="collapseNine"
+                  >
+                    9️⃣ Tìm trong mảng mới có bao nhiêu số nguyên
+                  </button>
+                </h2>
+                <div
+                  id="collapseNine"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingNine"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <form id="formNhapMangMoi">
+                      <div class="mb-3">
+                        <label for="" class="form-label"
+                          >Nhập Số (Số Nguyên hoặc Số Thực)</label
+                        >
+                        <input
+                          type="number"
+                          step="any"
+                          class="form-control"
+                          name="soMoi"
+                          id="soMoi"
+                          aria-describedby="helpId"
+                          placeholder="Nhập số"
+                          required
+                        />
+                      </div>
+
+                      <button class="btn btn-primary my-3" type="submit">
+                        Thêm Số Vào Mảng
+                      </button>
+                    </form>
+
+                    <div
+                      id="mangMoiDuocLuuTru"
+                      class="alert alert-dismissible alert-secondary"
+                    >
+                      <h5 class="alert-heading">Mảng Mới Được Lưu Trữ</h5>
+                      <p class="mb-0">
+                        <!-- Các số phần tử trong mảng được ngăn cách bởi dấu phẩy -->
+                        <span id="xuatMangMoi">...</span>
+                      </p>
+                    </div>
+
+                    <button class="btn btn-primary my-3" id="btnDemSoNguyen">
+                      Đếm Số Nguyên
+                    </button>
+
+                    <div
+                      id="ketQuaDemSoNguyen"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">Kết Quả Đếm Số Nguyên</h5>
+                      <p class="mb-0">
+                        Số Nguyên Có Trong Mảng Mới:
+                        <span id="xuatDemSoNguyen">...</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTen">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTen"
+                    aria-expanded="false"
+                    aria-controls="collapseTen"
+                  >
+                    🔟 So sánh số lượng số dương và số lượng số âm xem số nào
+                    nhiều hơn
+                  </button>
+                </h2>
+                <div
+                  id="collapseTen"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTen"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <button
+                      class="btn btn-primary my-3"
+                      id="btnSoSanhDuongVaAm"
+                    >
+                      So Sánh Số Dương Và Số Âm
+                    </button>
+
+                    <div
+                      id="ketQuaSoSanhDuongVaAm"
+                      class="alert alert-dismissible alert-primary"
+                    >
+                      <h5 class="alert-heading">
+                        Kết Quả So Sánh Số Dương Và Số Âm
+                      </h5>
+                      <p class="mb-0">
+                        <span id="xuatSoSanhDuongVaAm">...</span>
+                        <!-- In Kết quả dạng: Số Dương > Số Âm hoặc Số Dương < Số Âm hoặc Số Dương = Số Âm -->
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Code -->
+        <div class="my-5">
+          <h3 class="text-secondary">CODE</h3>
+          <hr />
+          <div class="card border-light mb-3">
+            <div class="card-body">
+              <div class="p-2">
+                <img class="img-fluid" src="./img/code-array.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- FOOTER -->
     <footer class="bg-dark text-center text-lg-start fixed-bottom">
