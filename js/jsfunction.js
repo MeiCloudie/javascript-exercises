@@ -113,3 +113,81 @@ document.getElementById("formTinhTienDien").onsubmit = function (event) {
     //   style: "currency",
   })} đồng cho tiền điện.`
 }
+
+//BÀI TẬP 3
+function tinhThueThuNhap(tongThuNhapNam, soNguoiPhuThuoc) {
+  var thueThuNhap = 0
+  var thuNhapChiuThue = tongThuNhapNam - 4000000 - soNguoiPhuThuoc * 1600000
+
+  if (thuNhapChiuThue <= 0) {
+    thueThuNhap = 0
+  } else if (thuNhapChiuThue <= 60000000) {
+    thueThuNhap = thuNhapChiuThue * 0.05
+  } else if (thuNhapChiuThue <= 120000000) {
+    thueThuNhap = 60000000 * 0.05 + (thuNhapChiuThue - 60000000) * 0.1
+  } else if (thuNhapChiuThue <= 210000000) {
+    thueThuNhap =
+      60000000 * 0.05 + 60000000 * 0.1 + (thuNhapChiuThue - 120000000) * 0.15
+  } else if (thuNhapChiuThue <= 384000000) {
+    thueThuNhap =
+      60000000 * 0.05 +
+      60000000 * 0.1 +
+      90000000 * 0.15 +
+      (thuNhapChiuThue - 210000000) * 0.2
+  } else if (thuNhapChiuThue <= 624000000) {
+    thueThuNhap =
+      60000000 * 0.05 +
+      60000000 * 0.1 +
+      90000000 * 0.15 +
+      174000000 * 0.2 +
+      (thuNhapChiuThue - 384000000) * 0.25
+  } else if (thuNhapChiuThue <= 960000000) {
+    thueThuNhap =
+      60000000 * 0.05 +
+      60000000 * 0.1 +
+      90000000 * 0.15 +
+      174000000 * 0.2 +
+      240000000 * 0.25 +
+      (thuNhapChiuThue - 624000000) * 0.3
+  } else {
+    thueThuNhap =
+      60000000 * 0.05 +
+      60000000 * 0.1 +
+      90000000 * 0.15 +
+      174000000 * 0.2 +
+      240000000 * 0.25 +
+      336000000 * 0.3 +
+      (thuNhapChiuThue - 960000000) * 0.35
+  }
+
+  return thueThuNhap
+}
+
+// Xử lý khi submit form
+document.getElementById("formTinhTienThue").onsubmit = function (event) {
+  // Ngăn chặn hành vi submit mặc định của form để tránh việc reload trang
+  event.preventDefault()
+
+  // Lấy giá trị của các trường nhập liệu từ form
+  var hoTenThue = document.getElementById("hoTenThue").value // Lấy họ tên người dùng
+  var tongThuNhapNam = parseFloat(
+    document.getElementById("tongThuNhapNam").value
+  ) // Lấy tổng thu nhập năm và chuyển thành kiểu số thực
+  var soNguoiPhuThuoc = parseInt(
+    document.getElementById("soNguoiPhuThuoc").value
+  ) // Lấy số người phụ thuộc và chuyển thành kiểu số nguyên
+
+  // Tính thuế thu nhập cá nhân dựa trên tổng thu nhập năm và số người phụ thuộc
+  var thue = tinhThueThuNhap(tongThuNhapNam, soNguoiPhuThuoc)
+
+  // Hiển thị kết quả tính thuế trên giao diện
+  document.getElementById(
+    "xuatTienThue"
+  ).innerText = `Thuế Thu Nhập Cá Nhân của ${hoTenThue} là: ${thue.toLocaleString(
+    "vi",
+    {
+      currency: "VND",
+      //   style: "currency",
+    }
+  )} VND`
+}

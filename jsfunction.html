@@ -596,7 +596,136 @@
               id="v-pills-bt3"
               role="tabpanel"
               aria-labelledby="v-pills-bt3-tab"
-            ></div>
+            >
+              <!-- Đề Bài -->
+              <div class="card border-light mb-3" style="width: 100%">
+                <div class="card-header">📖 ĐỀ BÀI</div>
+                <div class="card-body">
+                  <h4 class="card-title">🔥 Tính Thuế Thu Nhập Cá Nhân</h4>
+                  <br />
+                  <p class="card-text">
+                    - Viết chương trình nhập vào thông tin của 1 cá nhân (Họ
+                    tên, tổng thu nhập năm, số người phụ thuộc).
+                    <br />
+                    - Tổng thu nhập năm cho người dùng nhập tiền triệu trở lên.
+                    <br />
+                    - Tính và xuất thuế thu nhập cá nhân phải trả theo quy định
+                    sau.
+                    <br />
+                    <br />
+                    📌 Quy định (tiền VND):
+                    <br />
+                    - Thu nhập chịu thuế = Tổng thu nhập năm - 4.000.000 - Số
+                    người phụ thuộc * 1.600.000.
+                    <br />
+                    - Thu nhập chịu thuế đến 60.000.000 => Thuế suất = 5%.
+                    <br />
+                    - Thu nhập chịu thuế trên 60.000.000 đến 120.000.000 => Thuế
+                    suất = 10%.
+                    <br />
+                    - Thu nhập chịu thuế trên 120.000.000 đến 210.000.000 =>
+                    Thuế suất = 15%.
+                    <br />
+                    - Thu nhập chịu thuế trên 210.000.000 đến 384.000.000 =>
+                    Thuế suất = 20%.
+                    <br />
+                    - Thu nhập chịu thuế trên 384.000.000 đến 624.000.000 =>
+                    Thuế suất = 25%.
+                    <br />
+                    - Thu nhập chịu thuế trên 624.000.000 đến 960.000.000 =>
+                    Thuế suất = 30%.
+                    <br />
+                    - Thu nhập chịu thuế trên 960.000.000 => Thuế suất = 35%.
+                    <br />
+                  </p>
+                </div>
+              </div>
+              <br />
+              <!-- Bài Làm -->
+              <div>
+                <h3 class="text-secondary">BÀI LÀM</h3>
+                <hr />
+                <div class="px-5">
+                  <h3 class="mt-4 mb-4 text-center">
+                    💵 Chương Trình - Tính Thuế Thu Nhập Cá Nhân
+                  </h3>
+                  <form id="formTinhTienThue">
+                    <div class="mb-3">
+                      <label for="" class="form-label">Họ Tên</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="hoTenThue"
+                        id="hoTenThue"
+                        aria-describedby="helpId"
+                        placeholder="Nhập họ tên người được tính thuế"
+                        required
+                        maxlength="20"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label">Tổng Thu Nhập Năm</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="tongThuNhapNam"
+                        id="tongThuNhapNam"
+                        aria-describedby="helpId"
+                        placeholder="Nhập tổng thu nhập năm (triệu)"
+                        required
+                        maxlength="20"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label"
+                        >Số Người Phụ Thuộc</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="soNguoiPhuThuoc"
+                        id="soNguoiPhuThuoc"
+                        aria-describedby="helpId"
+                        placeholder="Nhập số người phụ thuộc"
+                        required
+                        maxlength="3"
+                      />
+                    </div>
+
+                    <button class="btn btn-primary my-3" type="submit">
+                      Tính Tiền Thuế
+                    </button>
+                  </form>
+
+                  <div
+                    id="ketQuaTinhTienThue"
+                    class="alert alert-dismissible alert-secondary"
+                  >
+                    <h5 class="alert-heading">Kết Quả Tính Tiền Thuế</h5>
+                    <p class="mb-0">
+                      <span id="xuatTienThue">...</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Code -->
+              <div class="my-5">
+                <h3 class="text-secondary">CODE</h3>
+                <hr />
+                <div class="card border-light mb-3">
+                  <div class="card-body">
+                    <div class="p-2">
+                      <img
+                        class="img-fluid"
+                        src="./img/code-function-bt3.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="tab-pane fade"
               id="v-pills-bt4"
