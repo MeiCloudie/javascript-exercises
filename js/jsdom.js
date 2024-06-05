@@ -59,3 +59,21 @@ document.getElementById("formQuyDoiTien").onsubmit = function (event) {
       //   style: "currency",
     }) + " VND"
 }
+
+//BÀI TẬP 4
+document.getElementById("formTinhDienTichChuVi").onsubmit = function (event) {
+  // Ngăn chặn hành vi mặc định của form khi submit
+  event.preventDefault()
+
+  // Lấy giá trị từ các input
+  var chieuDai = parseFloat(document.getElementById("chieuDaiHCN").value)
+  var chieuRong = parseFloat(document.getElementById("chieuRongHCN").value)
+
+  // Tính diện tích và chu vi
+  var dienTich = chieuDai * chieuRong
+  var chuVi = (chieuDai + chieuRong) * 2
+
+  // Hiển thị kết quả
+  var ketQua = `Diện Tích: ${dienTich} - Chu Vi: ${chuVi}`
+  document.getElementById("xuatDienTichChuVi").innerText = ketQua
+}

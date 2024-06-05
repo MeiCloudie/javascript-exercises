@@ -513,7 +513,83 @@
               role="tabpanel"
               aria-labelledby="v-pills-bt4-tab"
             >
-              bt4
+              <!-- Đề Bài -->
+              <div class="card border-light mb-3" style="width: 100%">
+                <div class="card-header">📖 ĐỀ BÀI</div>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    🔥 Tính Diện Tích, Chu Vi Hình Chữ Nhật
+                  </h4>
+                  <br />
+                  <p class="card-text">
+                    - Viết chương trình nhập vào 2 chiều dài và chiều rộng của
+                    Hình Chữ Nhật.
+                    <br />
+                    - Tính và xuất diện tích, chu vi của Hình Chữ Nhật đó.
+                    <br />
+                    <br />
+                    📌 Công thức tính:
+                    <br />
+                    - Diện tích = dài * rộng.
+                    <br />
+                    - Chu vi = (dài + rộng) * 2.
+                  </p>
+                </div>
+              </div>
+              <br />
+              <!-- Bài Làm -->
+              <div>
+                <h3 class="text-secondary">BÀI LÀM</h3>
+                <hr />
+                <div class="px-5">
+                  <h3 class="mt-4 mb-4 text-center">
+                    🧮 Chương Trình - Tính Diện Tích, Chu Vi Hình Chữ Nhật
+                  </h3>
+                  <form id="formTinhDienTichChuVi">
+                    <div class="mb-3">
+                      <label for="" class="form-label">Chiều Dài</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="chieuDaiHCN"
+                        id="chieuDaiHCN"
+                        aria-describedby="helpId"
+                        placeholder="Nhập chiều dài hình chữ nhật"
+                        required
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="" class="form-label">Chiều Rộng</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="chieuRongHCN"
+                        id="chieuRongHCN"
+                        aria-describedby="helpId"
+                        placeholder="Nhập chiều rộng hình chữ nhật"
+                        required
+                      />
+                    </div>
+
+                    <button class="btn btn-primary my-3" type="submit">
+                      Tính Diện Tích Và Chu Vi
+                    </button>
+                  </form>
+
+                  <div
+                    id="ketQuaDienTichChuVi"
+                    class="alert alert-dismissible alert-secondary"
+                  >
+                    <h5 class="alert-heading">
+                      Kết Quả Diện Tích Chu Vi Hình Chữ Nhật
+                    </h5>
+                    <p class="mb-0">
+                      <span id="xuatDienTichChuVi">...</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
               class="tab-pane fade"
